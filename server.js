@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const shrinkRay = require('shrink-ray');
+const shrinkRay = require('shrink-ray-current');
 const app = express();
 const equal = require('deep-equal');
-const firebase = require('@firebase/app').firebase;
+// const firebase = require('@firebase/app').firebase;
+// const firebase = require('firebase/app');
 const admin = require('firebase-admin');
 const indexRouter = require('./routes/index');
 const meritsRouter = require('./routes/merits');
@@ -15,19 +16,20 @@ const notificationsRouter = require('./routes/notifications');
 const dataRouter = require('./routes/data');
 const delibsRouter = require('./routes/delibs');
 const urlsRouter = require('./routes/urls');
+
 const port = process.env.PORT || 4000;
 global.XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
-require('dotenv').config();
+require('dotenv').config({ path: `${process.env.HOME}/Documents/Garnett-v2/controllers/.env` });
 
 // Firebase Config
-firebase.initializeApp({
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.FIREBASE_DATABASE_URL,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
-});
+// firebase.initializeApp({
+//   apiKey: process.env.FIREBASE_API_KEY,
+//   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+//   databaseURL: process.env.FIREBASE_DATABASE_URL,
+//   projectId: process.env.FIREBASE_PROJECT_ID,
+//   messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
+// });
 
 admin.initializeApp({
   credential: admin.credential.cert({
