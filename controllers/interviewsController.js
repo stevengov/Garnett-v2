@@ -1,7 +1,8 @@
 const admin = require('firebase-admin');
-const firebase = require('@firebase/app').firebase;
+// const firebase = require('@firebase/app').firebase;
+const firebase = require('firebase/app');
 const urlExists = require('url-exists');
-require('@firebase/auth');
+// require('@firebase/auth');
 
 // Query for the user's interviews progress
 exports.get_interviews_progress = function(req, res) {

@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const shrinkRay = require('shrink-ray');
+const shrinkRay = require('shrink-ray-current');
 const app = express();
 const equal = require('deep-equal');
-const firebase = require('@firebase/app').firebase;
+// const firebase = require('@firebase/app').firebase;
+const firebase = require('firebase/app');
 const admin = require('firebase-admin');
 const indexRouter = require('./routes/index');
 const meritsRouter = require('./routes/merits');
@@ -18,7 +19,7 @@ const urlsRouter = require('./routes/urls');
 const port = process.env.PORT || 4000;
 global.XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
-require('dotenv').config();
+require('dotenv').config({ path: `${process.env.HOME}/Documents/Garnett-v2/controllers/.env` });
 
 // Firebase Config
 firebase.initializeApp({

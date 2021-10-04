@@ -1,7 +1,10 @@
 const admin = require('firebase-admin');
-const firebase = require('@firebase/app').firebase;
+const firebase = require('firebase/app')
 const urlExists = require('url-exists');
-require('@firebase/auth');
+// const admin = require('firebase-admin');
+// const firebase = require('@firebase/app').firebase;
+// const urlExists = require('url-exists');
+// require('@firebase/auth');
 
 // Retrieving Authentication Status Route
 exports.get_auth_status = function(req, res) {
