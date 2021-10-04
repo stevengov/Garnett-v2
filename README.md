@@ -3,7 +3,7 @@
 </div>
 
 # Garnett
-
+fdsa
 Web application for members of the Epsilon Delta Chapter of Theta Tau. You can check it out [here](https://garnett-app.herokuapp.com).
 
 ## Table of Contents
